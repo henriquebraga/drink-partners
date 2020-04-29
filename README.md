@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 # Drink Partners API
 
 REST API responsible for managing partners
