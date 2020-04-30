@@ -12,7 +12,7 @@ def build_app(loop=None):
     return app
 
 
-def register_routes(app):
+def register_routes(app):  # pragma: no cover
     pass
 
 
@@ -20,9 +20,9 @@ def get_middlewares():
     return []
 
 
-async def start_plugins(app):
+async def start_plugins(app):  # pragma: no cover
     pass
 
 
-async def stop_plugins(app):
+async def stop_plugins(app):  # pragma: no cover
     pass
