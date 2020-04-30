@@ -28,7 +28,7 @@ lint:
 	@isort --check
 
 run:
-	@gunicorn drink_partners:app --bind localhost:8080 --worker-class aiohttp.worker.GunicornUVLoopWebWorker -e SIMPLE_SETTINGS=patolino.settings.development
+	@gunicorn drink_partners:app --bind localhost:8080 --worker-class aiohttp.worker.GunicornUVLoopWebWorker -e SIMPLE_SETTINGS=drink_partners.settings.development
 
 detect-outdated-dependencies:
 	@sh -c 'output=$$(pip list --outdated); echo "$$output"; test -z "$$output"'
