@@ -1,3 +1,12 @@
+Drink_Partners 0.7.0 (2020-04-30)
+=================================
+
+Features
+--------
+
+- Implement error exception middleware
+
+
 Drink_Partners 0.6.0 (2020-04-30)
 =================================
 
