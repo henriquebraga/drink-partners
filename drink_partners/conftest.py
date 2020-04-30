@@ -2,6 +2,7 @@ import asyncio
 
 import pytest
 from aiohttp.client_reqrep import ClientRequest
+from simple_settings.utils import settings_stub
 from yarl import URL
 
 from drink_partners import app as _app
@@ -17,6 +18,28 @@ def loop():
 @pytest.fixture
 def app(loop):
     return _app
+
+
+@pytest.fixture
+def application():
+    return {'name': 'test', 'active': True}
+
+
+@pytest.fixture
+def token():
+    return 'Murcho'
+
+
+@pytest.fixture
+def settings_with_applications(token):
+    applications_settings = {
+        'test': token
+    }
+
+    with settings_stub(
+        AUTH_APPLICATIONS=applications_settings
+    ) as mocked_settings:
+        yield mocked_settings
 
 
 @pytest.fixture(autouse=True)
