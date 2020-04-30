@@ -1,6 +1,8 @@
 
 # Drink Partners API
 
+![Travis Build](https://travis-ci.com/henriquebraga/drink-partners.svg?token=Hz2UvRp98GSpoFSdrKgh&branch=master)
+
 REST API responsible for managing partners
 
 # Install dependencies
