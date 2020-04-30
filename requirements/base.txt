@@ -1,1 +1,4 @@
+aiohttp==3.6.2
+gunicorn==20.0.0
 simple-settings==0.19.1
+uvloop==0.14.0
