@@ -28,6 +28,9 @@ lint:
 	@isort --check
 	@mypy drink_partners --ignore-missing-imports
 
+run:
+	@gunicorn drink_partners:app --bind localhost:8080 --worker-class aiohttp.worker.GunicornUVLoopWebWorker -e SIMPLE_SETTINGS=patolino.settings.development
+
 detect-outdated-dependencies:
 	@sh -c 'output=$$(pip list --outdated); echo "$$output"; test -z "$$output"'
 

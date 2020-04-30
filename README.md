@@ -33,3 +33,9 @@ make test-matching Q=[test_name_or_test_class_name]
 ```bash
 make coverage
 ```
+
+## Running application
+
+```bash
+make run
+```
