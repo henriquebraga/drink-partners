@@ -13,7 +13,9 @@ install:
 
 # Run the unit test
 script:
+  - make lint
   - make test-coverage
+  - make check-vulnerabilities
 
 after_success:
   - make test-coverage
