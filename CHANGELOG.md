@@ -1,3 +1,12 @@
+Drink_Partners 0.6.0 (2020-04-30)
+=================================
+
+Features
+--------
+
+- Implement healthcheck route
+
+
 Drink_Partners 0.5.0 (2020-04-30)
 =================================
 
