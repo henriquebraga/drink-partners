@@ -1,3 +1,12 @@
+Drink_Partners 0.8.0 (2020-04-30)
+=================================
+
+Features
+--------
+
+- Implement API version middleware
+
+
 Drink_Partners 0.7.0 (2020-04-30)
 =================================
 
