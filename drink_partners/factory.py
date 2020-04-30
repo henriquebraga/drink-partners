@@ -3,6 +3,9 @@ from aiohttp import web
 from drink_partners.healthcheck.routes import (
     register_routes as register_healthcheck_routes
 )
+from drink_partners.middlewares.exception_handler import (
+    exception_handler_middleware
+)
 
 
 def build_app(loop=None):
@@ -21,7 +24,9 @@ def register_routes(app):  # pragma: no cover
 
 
 def get_middlewares():
-    return []
+    return [
+        exception_handler_middleware
+    ]
 
 
 async def start_plugins(app):  # pragma: no cover
