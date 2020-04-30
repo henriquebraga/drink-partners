@@ -1,5 +1,9 @@
 from aiohttp import web
 
+from drink_partners.healthcheck.routes import (
+    register_routes as register_healthcheck_routes
+)
+
 
 def build_app(loop=None):
     app = web.Application(loop=loop, middlewares=get_middlewares())
@@ -13,7 +17,7 @@ def build_app(loop=None):
 
 
 def register_routes(app):  # pragma: no cover
-    pass
+    register_healthcheck_routes(app)
 
 
 def get_middlewares():
