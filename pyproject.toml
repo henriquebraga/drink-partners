@@ -1,5 +1,5 @@
 [tool.towncrier]
-    package = 'patolino'
+    package = 'drink_partners'
     package_dir = '.'
     filename = 'CHANGELOG.md'
     directory = 'changelog.d'
