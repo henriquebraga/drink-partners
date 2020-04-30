@@ -1,1 +1,0 @@
-Add `make check-vulnerabilities` step to CI build

@@ -1,3 +1,13 @@
+Drink_Partners 0.5.0 (2020-04-30)
+=================================
+
+Features
+--------
+
+- Add `make check-vulnerabilities` step to CI build
+- Add `make lint` step to CI build
+
+
 Drink_Partners 0.4.0 (2020-04-29)
 =================================
 
