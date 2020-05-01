@@ -21,3 +21,7 @@ class TestMongoClient:
 
     def test_should_return_collection_name(self, mongo1):
         assert mongo1.get_collection('partners').name == 'partners'
+
+    def test_should_client_as_none(self, mongo1):
+        mongo1.close()
+        assert mongo1._client is None
