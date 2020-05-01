@@ -34,3 +34,9 @@ class NotFound(APIException):
     status_code = 404
     error_code = 'not_found'
     error_message = 'Not Found'
+
+
+class BadRequest(APIException):
+    status_code = 400
+    error_code = 'bad_request'
+    error_message = 'Bad Request'
