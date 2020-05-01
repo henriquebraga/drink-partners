@@ -8,7 +8,10 @@ REST API responsible for managing partners
 # Install dependencies
 
 1. Create virtualenv:
+
+```bash
     virtualenv drink_partner -p python3
+```
 
 2. Install dependencies using `pip`
 
@@ -18,25 +21,47 @@ REST API responsible for managing partners
 
 ## Tests
 
-1. To run all suite tests:
+1. Install docker or download mongodb
+
+   [Docker for Mac](https://docs.docker.com/docker-for-mac/install/) 
+   [Docker for Linux](https://docs.docker.com/engine/install/ubuntu/)
+   [Docker for Windows](https://docs.docker.com/docker-for-windows/)
+   
+   [Mongodb for Mac](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
+   [Mongodb for Linux](https://docs.mongodb.com/manual/administration/install-on-linux/)
+
+2. Run docker-compose for project dependencies:
+
+```bash
+docker-compose up
+ ```
+3. To run all suite tests:
 
 ```bash
 make test
 ```
 
-2. To execute specific tests:
+4. To execute specific tests:
 
 ```bash
 make test-matching Q=[test_name_or_test_class_name] 
 ```
 
-3. To execute test coverage:
+5. To execute test coverage:
 
 ```bash
-make coverage
+make test-coverage
 ```
 
 ## Running application
+
+1. Run service dependencies:
+
+```bash
+docker compose-up
+```
+
+2. Run application:
 
 ```bash
 make run
