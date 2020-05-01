@@ -28,3 +28,9 @@ class APIException(Exception):
             data['error_details'] = self.error_details
 
         return data
+
+
+class NotFound(APIException):
+    status_code = 404
+    error_code = 'not_found'
+    error_message = 'Not Found'
