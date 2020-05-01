@@ -1,3 +1,5 @@
+import os
+
 from drink_partners.settings import constants
 
 # Auth applications
@@ -10,5 +12,10 @@ POOL_OF_RAMOS = {
         constants.STATIC_AUTHORIZATION_BACKEND,
     ]
 }
+
+MOTOR_DB = 'drink_partners'
+MOTOR_URI = os.environ.get('MONGO_URI', f'mongodb://127.0.0.1:27017/{MOTOR_DB}') # noqa
+MOTOR_MAX_POOL_SIZE = int(os.environ.get('MONGO_MAX_POOL_SIZE', '1'))
+MOTOR_KWARGS = {}
 
 DEFAULT_AUTH_BACKEND_ID = 'static'
