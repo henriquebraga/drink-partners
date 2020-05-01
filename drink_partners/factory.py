@@ -8,6 +8,9 @@ from drink_partners.middlewares.exception_handler import (
     exception_handler_middleware
 )
 from drink_partners.middlewares.version import version_middleware
+from drink_partners.partners.routes import (
+    register_routes as register_partners_routes
+)
 
 
 def build_app(loop=None):
@@ -23,6 +26,7 @@ def build_app(loop=None):
 
 def register_routes(app):  # pragma: no cover
     register_healthcheck_routes(app)
+    register_partners_routes(app)
 
 
 def get_middlewares():
