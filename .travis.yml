@@ -14,8 +14,8 @@ install:
 # Run the unit test
 script:
   - make lint
-  - make test-coverage
   - make check-vulnerabilities
+  - make test-coverage
 
 after_success:
-  - make test-coverage
+  - bash <(curl -s https://codecov.io/bash)
