@@ -1,3 +1,19 @@
+Drink_Partners 0.9.0 (2020-04-30)
+=================================
+
+Features
+--------
+
+- Create Authentication middleware
+- Create Static Authentication Backend
+
+
+Bugfixes
+--------
+
+- Add authentication Pool
+
+
 Drink_Partners 0.8.0 (2020-04-30)
 =================================
 
