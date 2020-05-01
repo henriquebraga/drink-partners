@@ -2,6 +2,7 @@
 # Drink Partners API
 
 ![Travis Build](https://travis-ci.com/henriquebraga/drink-partners.svg?token=Hz2UvRp98GSpoFSdrKgh&branch=master)
+[![codecov](https://codecov.io/gh/henriquebraga/drink-partners/branch/master/graph/badge.svg?token=ex1RxllagJ)](https://codecov.io/gh/henriquebraga/drink-partners)
 
 REST API responsible for managing partners
 
