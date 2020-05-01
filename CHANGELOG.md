@@ -1,3 +1,13 @@
+Drink_Partners 0.11.0 (2020-05-01)
+==================================
+
+Features
+--------
+
+- Create MongoDB Client
+- Implement get partners view
+
+
 Drink_Partners 0.10.0 (2020-05-01)
 ==================================
 
