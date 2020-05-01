@@ -1,3 +1,7 @@
+#MongoDB dependency
+services:
+  - mongodb
+
 # Disable sudo to speed up the build
 sudo: false
 
