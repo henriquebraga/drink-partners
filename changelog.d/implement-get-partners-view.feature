@@ -1,1 +1,0 @@
-Implement get partners view
