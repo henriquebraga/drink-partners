@@ -40,3 +40,30 @@ class TestPartnerGetView:
             details = content['error_message']
 
             assert details == 'Partner not found for id: 100'
+
+
+class TestProductCreateView:
+
+    async def test_should_return_status_ok(
+        self,
+        client,
+        create_partner_url,
+        create_partner_payload,
+    ):
+        async with client.post(
+            create_partner_url,
+            json=create_partner_payload
+        ) as response:
+            assert response.status == 201
+
+    async def test_should_return_bad_request_when_no_payload(
+        self,
+        client,
+        create_partner_url,
+        create_partner_payload,
+    ):
+        async with client.post(
+            create_partner_url,
+            json=None
+        ) as response:
+            assert response.status == 400

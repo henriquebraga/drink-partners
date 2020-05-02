@@ -37,3 +37,17 @@ class PartnerGetView(web.View):
             raise BadRequest(
                 error_message=f'Partner id "{_id}" must be an integer value'
             )
+
+
+class PartnerCreateView(web.View):
+
+    async def post(self):
+        data = {}
+        try:
+            data = await self.request.json()
+        except Exception as e:
+            raise BadRequest(
+                error_message=f'Invalid payload:{data} error:{e}'
+            )
+
+        return web.json_response(status=201, data=data)
