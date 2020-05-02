@@ -1,6 +1,6 @@
 import pytest
 
-from drink_partners.contrib.mongo.client import MongoClient
+from drink_partners.contrib.mongo import MongoClient
 
 
 class TestMongoClient:

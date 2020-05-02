@@ -1,8 +1,6 @@
-import asyncio
-
 from aiohttp import web
 
-from drink_partners.contrib.mongo.client import MongoClient
+from drink_partners.contrib.mongo import MongoClient
 from drink_partners.healthcheck.routes import (
     register_routes as register_healthcheck_routes
 )
@@ -41,8 +39,7 @@ def get_middlewares():
 
 
 async def start_plugins(app):  # pragma: no cover
-    loop = asyncio.get_event_loop()
-    app.mongo = MongoClient(loop)
+    app.mongo = MongoClient()
 
 
 async def stop_plugins(app):  # pragma: no cover
