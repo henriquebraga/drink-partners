@@ -1,6 +1,6 @@
 from drink_partners.contrib.logs.streams import LogDiscarder
 
-from .base import *  # noqa; noqa
+from .base import *  # noqa
 
 MOTOR_DB = 'drink_partners_test'
 

@@ -3,10 +3,10 @@ import sys
 
 from drink_partners.settings import constants
 
-# SIMPLE_SETTINGS = {
-#     'OVERRIDE_BY_ENV': True,
-#     'CONFIGURE_LOGGING': True
-# }
+SIMPLE_SETTINGS = {
+    'OVERRIDE_BY_ENV': True,
+    'CONFIGURE_LOGGING': True
+}
 
 LOGGING = {
     'version': 1,
