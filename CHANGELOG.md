@@ -1,3 +1,18 @@
+Drink_Partners 0.13.0 (2020-05-02)
+==================================
+
+Features
+--------
+
+- Configure application logging
+
+
+Bugfixes
+--------
+
+- Fix initialize mongoDB when starting application
+
+
 Drink_Partners 0.12.0 (2020-05-01)
 ==================================
 
