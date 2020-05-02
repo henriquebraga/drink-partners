@@ -1,6 +1,7 @@
 import pytest
-from drink_partners.extensions.partners.mongodb import PartnersMongoDbBackend
+
 from drink_partners.contrib.samples import partner_adega_cerveja
+from drink_partners.extensions.partners.mongodb import PartnersMongoDbBackend
 
 
 @pytest.fixture
