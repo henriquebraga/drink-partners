@@ -1,3 +1,12 @@
+Drink_Partners 0.12.0 (2020-05-01)
+==================================
+
+Features
+--------
+
+- Implement backend pool for partners
+
+
 Drink_Partners 0.11.1 (2020-05-01)
 ==================================
 
