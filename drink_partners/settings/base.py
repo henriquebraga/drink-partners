@@ -10,7 +10,11 @@ AUTH_APPLICATIONS = {
 POOL_OF_RAMOS = {
     'authentication': [
         constants.STATIC_AUTHORIZATION_BACKEND,
-    ]
+    ],
+    'partners': [
+        constants.MONGODB_PARTNERS_BACKEND,
+    ],
+
 }
 
 MOTOR_DB = 'drink_partners'
@@ -19,3 +23,4 @@ MOTOR_MAX_POOL_SIZE = int(os.environ.get('MONGO_MAX_POOL_SIZE', '1'))
 MOTOR_KWARGS = {}
 
 DEFAULT_AUTH_BACKEND_ID = 'static'
+DEFAULT_PARTNERS_BACKEND_ID = 'mongodb'
