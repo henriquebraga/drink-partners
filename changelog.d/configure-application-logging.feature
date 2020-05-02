@@ -1,0 +1,1 @@
+Configure application logging

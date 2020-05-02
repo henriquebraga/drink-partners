@@ -1,7 +1,6 @@
 import json
 
 from aiohttp import web
-from aiohttp.web import Response
 from aiohttp.web_exceptions import HTTPError, HTTPUnauthorized
 
 from drink_partners.backends.pools.authentication import (
@@ -11,10 +10,6 @@ from drink_partners.backends.pools.authentication import (
 ROUTES_TO_IGNORE = (
     '/healthcheck/',
 )
-
-
-async def test_handler(request):
-    return Response(text='I am a handler.')
 
 
 @web.middleware
