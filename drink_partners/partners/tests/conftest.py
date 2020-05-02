@@ -1,37 +1,25 @@
 import pytest
 
-
-@pytest.fixture
-def partner():
-    return {
-        'id': 1,
-        'tradingName': 'Adega da Cerveja - Pinheiros',
-        'ownerName': 'Zé da Silva',
-        'document': '1432132123891/0001',
-        'coverageArea': {
-            'type': 'MultiPolygon',
-            'coordinates': [
-                [
-                    [
-                        [30, 20], [45, 40], [10, 40], [30, 20]
-                    ]
-                ],
-                [
-                    [
-                        [15, 5], [40, 10], [10, 20], [5, 10], [15, 5]
-                    ]
-                ]
-            ]
-        },
-        'address': {
-            'type': 'Point',
-            'coordinates': [-46.57421, -21.785741]
-        },
-    }
+from drink_partners.contrib.samples import partner_adega_cerveja
 
 
 @pytest.fixture
-async def save_partner(mongo_database, partner):
+def url():
+    return '/partner/1/'
+
+
+@pytest.fixture
+def partner_with_str_id_url():
+    return '/partner/id-str/'
+
+
+@pytest.fixture
+def partner_not_found_url():
+    return '/partner/100/'
+
+
+@pytest.fixture
+async def save_partner(mongo_database):
     partner_collection = mongo_database.get_collection('partners')
-    await partner_collection.insert_one(partner)
-    return partner
+    await partner_collection.insert_one(partner_adega_cerveja())
+    return partner_adega_cerveja()
