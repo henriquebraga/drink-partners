@@ -1,19 +1,4 @@
-import pytest
-
-
 class TestPartnerGetView:
-
-    @pytest.fixture
-    def url(self):
-        return '/partner/1/'
-
-    @pytest.fixture
-    def partner_with_str_id_url(self):
-        return '/partner/id-str/'
-
-    @pytest.fixture
-    def partner_not_found_url(self):
-        return '/partner/100/'
 
     async def test_get_should_return_partner(
         self,
@@ -24,7 +9,6 @@ class TestPartnerGetView:
         async with client.get(url) as response:
             assert response.status == 200
             partner = await response.json()
-            del save_partner['_id']
             assert partner == save_partner
 
     async def test_get_should_return_bad_request_when_id_is_str(

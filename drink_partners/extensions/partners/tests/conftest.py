@@ -1,21 +1,12 @@
 import pytest
 
 from drink_partners.contrib.samples import partner_adega_cerveja
+from drink_partners.extensions.partners.mongodb import PartnersMongoDbBackend
 
 
 @pytest.fixture
-def url():
-    return '/partner/1/'
-
-
-@pytest.fixture
-def partner_with_str_id_url():
-    return '/partner/id-str/'
-
-
-@pytest.fixture
-def partner_not_found_url():
-    return '/partner/100/'
+def backend():
+    return PartnersMongoDbBackend.create()
 
 
 @pytest.fixture
