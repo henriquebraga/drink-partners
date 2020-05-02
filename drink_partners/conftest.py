@@ -44,7 +44,7 @@ def application():
 
 @pytest.fixture
 def token():
-    return 'token'
+    return 'Murcho'
 
 
 @pytest.fixture
