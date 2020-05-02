@@ -1,3 +1,12 @@
+Drink_Partners 0.11.1 (2020-05-01)
+==================================
+
+Features
+--------
+
+- Start mongodb when initialize app
+
+
 Drink_Partners 0.11.0 (2020-05-01)
 ==================================
 
