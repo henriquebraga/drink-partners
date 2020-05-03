@@ -1,7 +1,12 @@
 import pytest
+from geojson import Point
 
 from drink_partners.contrib.exceptions import PartnerAlreadyExists
-from drink_partners.contrib.samples import partner_adega_cerveja
+from drink_partners.contrib.samples import (
+    bar_legal_partner,
+    partner_adega_cerveja,
+    partner_adega_ze_ambev
+)
 
 
 class TestPartnersMongoDbBackend:
@@ -39,3 +44,57 @@ class TestPartnersMongoDbBackend:
         )
 
         assert partner == partner_adega_cerveja()
+
+    async def test_should_search_partner_by_lat_long(
+        self,
+        backend
+    ):
+        partner = partner_adega_ze_ambev()
+        coordinate = partner['coverageArea']['coordinates'][0][0][0]
+
+        await backend.save(partner)
+
+        point = Point(coordinate)
+
+        found_partner = await backend.search_nearest_by_lng_lat(
+            coordinate=point
+        )
+
+        assert found_partner == partner_adega_ze_ambev()
+
+    async def test_should_search_by_lat_long_nearest_address_partner(
+        self,
+        backend
+    ):
+        partner = partner_adega_ze_ambev()
+        nearest_partner = bar_legal_partner()
+
+        coordinate = partner['coverageArea']['coordinates'][0][0][0]
+
+        await backend.save(partner)
+        await backend.save(nearest_partner)
+
+        point = Point(coordinate)
+
+        found_partner = await backend.search_nearest_by_lng_lat(
+            coordinate=point
+        )
+
+        assert found_partner == nearest_partner
+
+    async def test_search_partner_by_lat_long_be_none_when_no_partner_found(
+        self,
+        backend
+    ):
+        partner = partner_adega_ze_ambev()
+        coordinate = [0, 0]
+
+        await backend.save(partner)
+
+        point = Point(coordinate)
+
+        found_partner = await backend.search_nearest_by_lng_lat(
+            coordinate=point
+        )
+
+        assert found_partner is None
