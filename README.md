@@ -25,10 +25,13 @@ REST API responsible for managing partners
 1. Install docker or download mongodb
 
    [Docker for Mac](https://docs.docker.com/docker-for-mac/install/) 
+   
    [Docker for Linux](https://docs.docker.com/engine/install/ubuntu/)
+   
    [Docker for Windows](https://docs.docker.com/docker-for-windows/)
    
    [Mongodb for Mac](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
+   
    [Mongodb for Linux](https://docs.mongodb.com/manual/administration/install-on-linux/)
 
 2. Run docker-compose for project dependencies:
@@ -68,13 +71,9 @@ docker compose-up
 make run
 ```
 
-## Doc (Swagger)
+## Documentation (Swagger)
 
-1. Execute steps `Running local application` above
-
-```bash
-docker compose-up
-```
+1. Execute steps `Running application` above
 
 2. Access doc endpoint:
 
