@@ -1,4 +1,5 @@
 from aiohttp import web
+from aiohttp_swagger import setup_swagger
 
 from drink_partners.contrib.mongo import MongoClient
 from drink_partners.healthcheck.routes import (
@@ -19,6 +20,12 @@ def build_app(loop=None):
 
     app.on_startup.append(start_plugins)
     app.on_cleanup.append(stop_plugins)
+
+    setup_swagger(
+        app,
+        swagger_url='/docs',
+        swagger_from_file="docs/swagger.yaml"
+    )
 
     register_routes(app)
 
