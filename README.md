@@ -67,3 +67,20 @@ docker compose-up
 ```bash
 make run
 ```
+
+## Doc (Swagger)
+
+1. Execute steps `Running local application` above
+
+```bash
+docker compose-up
+```
+
+2. Access doc endpoint:
+
+```bash
+127.0.0.1/docs/
+```
+
+3. Set token by clicking in `Authorize` button and adding token `test`
+
