@@ -1,6 +1,10 @@
 import pytest
 
-from drink_partners.contrib.samples import partner_adega_cerveja
+from drink_partners.contrib.samples import (
+    partner_adega_cerveja,
+    partner_adega_ze_ambev,
+    partner_bar_legal
+)
 
 
 @pytest.fixture
@@ -20,7 +24,7 @@ def partner_search_with_str_coordinates_url():
 
 @pytest.fixture
 def partner_search_coordinates_url():
-    return '/partner/search/lng/-46.57421/lat/-21.785741/'
+    return '/partner/search/lng/-43.36556/lat/-22.99669/'
 
 
 @pytest.fixture
@@ -45,3 +49,16 @@ def create_partner_payload():
     return {
         'pdvs': [partner_adega_cerveja()]
     }
+
+
+@pytest.fixture
+async def save_partners(mongo_database):
+    partners = [
+        partner_adega_ze_ambev(),
+        partner_bar_legal()
+    ]
+
+    for partner in partners:
+        await mongo_database.get_collection('partners').insert_one(partner)
+
+    return partners
