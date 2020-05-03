@@ -9,6 +9,7 @@ from drink_partners.backends.pools.authentication import (
 
 ROUTES_TO_IGNORE = (
     '/healthcheck/',
+    '/docs/'
 )
 
 
