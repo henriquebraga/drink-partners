@@ -1,1 +1,0 @@
-Document get partner by endpoint in swagger

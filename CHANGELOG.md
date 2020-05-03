@@ -1,3 +1,13 @@
+Drink_Partners 0.17.0 (2020-05-03)
+==================================
+
+Features
+--------
+
+- Document get partner by endpoint in swagger
+- Implement swagger
+
+
 Drink_Partners 0.16.0 (2020-05-02)
 ==================================
 
