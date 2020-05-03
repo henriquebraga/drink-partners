@@ -14,6 +14,16 @@ def partner_with_str_id_url():
 
 
 @pytest.fixture
+def partner_search_with_str_coordinates_url():
+    return '/partner/search/lng/a/lat/a/'
+
+
+@pytest.fixture
+def partner_search_coordinates_url():
+    return '/partner/search/lng/-46.57421/lat/-21.785741/'
+
+
+@pytest.fixture
 def partner_not_found_url():
     return '/partner/100/'
 
