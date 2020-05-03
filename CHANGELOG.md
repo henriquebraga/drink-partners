@@ -1,3 +1,14 @@
+Drink_Partners 0.18.0 (2020-05-03)
+==================================
+
+Features
+--------
+
+- Create partner search by latitude and longitude coordinates view structure
+- Implement search nearest partner from latitude longitude mongodb backend
+- Implement search nearest partner given coordinate to PartnerSearchView
+
+
 Drink_Partners 0.17.0 (2020-05-03)
 ==================================
 
