@@ -39,7 +39,7 @@ class PartnersMongoDbBackend(SingletonCreateMixin, PartnersBackend):
         await self.partners_collection.insert_one(payload)
         del payload['_id']
 
-    async def search_nearest_by_lng_lat(self, coordinate):
+    async def search_nearest_by_coordinate(self, coordinate):
         criteria = {
             'coverageArea': {
                 '$geoIntersects': {

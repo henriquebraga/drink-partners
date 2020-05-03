@@ -45,7 +45,7 @@ class TestPartnersMongoDbBackend:
 
         assert partner == partner_adega_cerveja()
 
-    async def test_should_search_partner_by_lat_long(
+    async def test_should_search_partner_by_coordinate(
         self,
         backend
     ):
@@ -56,13 +56,13 @@ class TestPartnersMongoDbBackend:
 
         point = Point(coordinate)
 
-        found_partner = await backend.search_nearest_by_lng_lat(
+        found_partner = await backend.search_nearest_by_coordinate(
             coordinate=point
         )
 
         assert found_partner == partner_adega_ze_ambev()
 
-    async def test_should_search_by_lat_long_nearest_address_partner(
+    async def test_should_search_by_coordinate_nearest_address_partner(
         self,
         backend
     ):
@@ -76,13 +76,13 @@ class TestPartnersMongoDbBackend:
 
         point = Point(coordinate)
 
-        found_partner = await backend.search_nearest_by_lng_lat(
+        found_partner = await backend.search_nearest_by_coordinate(
             coordinate=point
         )
 
         assert found_partner == nearest_partner
 
-    async def test_search_partner_by_lat_long_be_none_when_no_partner_found(
+    async def test_search_partner_by_coordinate_be_none_when_no_partner_found(
         self,
         backend
     ):
@@ -93,7 +93,7 @@ class TestPartnersMongoDbBackend:
 
         point = Point(coordinate)
 
-        found_partner = await backend.search_nearest_by_lng_lat(
+        found_partner = await backend.search_nearest_by_coordinate(
             coordinate=point
         )
 
