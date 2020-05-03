@@ -40,3 +40,22 @@ class BadRequest(APIException):
     status_code = 400
     error_code = 'bad_request'
     error_message = 'Bad Request'
+
+
+class Conflict(APIException):
+    status_code = 409
+    error_code = 'conflict'
+    error_message = 'Conflict'
+
+
+class PartnerAlreadyExists(Exception):
+
+    def __init__(self, partner_id, document):
+        self.partner_id = partner_id
+        self.document = document
+
+    def __str__(self):
+        return (
+            f'Partner with id:{self.partner_id} '
+            f'and document:{self.document} already exists'
+        )

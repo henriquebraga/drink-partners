@@ -1,4 +1,4 @@
-from .views import PartnerGetView
+from .views import PartnerCreateView, PartnerGetView
 
 
 def register_routes(app):
@@ -6,4 +6,10 @@ def register_routes(app):
         'GET',
         '/partner/{id}/',
         PartnerGetView
+    )
+
+    app.router.add_route(
+        'POST',
+        '/partner/',
+        PartnerCreateView
     )
