@@ -1,1 +1,0 @@
-Implement partner create view

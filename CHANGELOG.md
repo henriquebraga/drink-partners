@@ -1,3 +1,12 @@
+Drink_Partners 0.15.0 (2020-05-02)
+==================================
+
+Features
+--------
+
+- Implement partner create view
+
+
 Drink_Partners 0.14.0 (2020-05-02)
 ==================================
 
