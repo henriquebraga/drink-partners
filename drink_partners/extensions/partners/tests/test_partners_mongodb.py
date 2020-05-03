@@ -3,9 +3,9 @@ from geojson import Point
 
 from drink_partners.contrib.exceptions import PartnerAlreadyExists
 from drink_partners.contrib.samples import (
-    bar_legal_partner,
     partner_adega_cerveja,
-    partner_adega_ze_ambev
+    partner_adega_ze_ambev,
+    partner_bar_legal
 )
 
 
@@ -67,7 +67,7 @@ class TestPartnersMongoDbBackend:
         backend
     ):
         partner = partner_adega_ze_ambev()
-        nearest_partner = bar_legal_partner()
+        nearest_partner = partner_bar_legal()
 
         coordinate = partner['coverageArea']['coordinates'][0][0][0]
 
