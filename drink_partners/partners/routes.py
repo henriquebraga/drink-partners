@@ -1,4 +1,5 @@
-from .views import PartnerCreateView, PartnerGetView
+from drink_partners.partners.views.partner_create_view import PartnerCreateView
+from drink_partners.partners.views.partner_get_view import PartnerGetView
 
 
 def register_routes(app):
