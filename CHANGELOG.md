@@ -1,3 +1,13 @@
+Drink_Partners 0.16.0 (2020-05-02)
+==================================
+
+Features
+--------
+
+- Refactor moving partner views constructor to super class
+- Refactor moving one view class per file
+
+
 Drink_Partners 0.15.0 (2020-05-02)
 ==================================
 
