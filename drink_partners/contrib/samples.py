@@ -163,7 +163,7 @@ def partner_adega_ze_ambev():
     }
 
 
-def bar_legal_partner():
+def partner_bar_legal():
     return {
         'id': 25,
         'tradingName': 'Bar Legal',

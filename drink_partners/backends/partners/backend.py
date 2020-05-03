@@ -16,5 +16,5 @@ class PartnersBackend(abc.ABC):
         pass
 
     @abc.abstractmethod
-    async def search_nearest_by_lng_lat(self, coordinate):  # pragma: no cover
+    async def search_nearest_by_coordinate(self, coordinate):  # pragma: no cover # noqa
         pass
