@@ -1,3 +1,12 @@
+Drink_Partners 0.19.0 (2020-05-04)
+==================================
+
+Features
+--------
+
+- Validate fields on partner create view
+
+
 Drink_Partners 0.18.0 (2020-05-03)
 ==================================
 
