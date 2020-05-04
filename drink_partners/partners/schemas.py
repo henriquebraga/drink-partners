@@ -1,10 +1,4 @@
-from marshmallow import (
-    Schema,
-    ValidationError,
-    fields,
-    pre_load,
-    validate
-)
+from marshmallow import Schema, ValidationError, fields, pre_load, validate
 
 
 def validate_point(points):
