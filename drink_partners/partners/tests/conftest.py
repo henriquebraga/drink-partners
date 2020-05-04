@@ -46,9 +46,7 @@ async def save_partner(mongo_database):
 
 @pytest.fixture
 def create_partner_payload():
-    return {
-        'pdvs': [partner_adega_cerveja()]
-    }
+    return partner_adega_cerveja()
 
 
 @pytest.fixture

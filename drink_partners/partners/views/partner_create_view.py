@@ -7,8 +7,8 @@ from drink_partners.contrib.exceptions import (
     PartnerAlreadyExists
 )
 from drink_partners.contrib.response import JSONResponse
-
-from .generic import PartnerView
+from drink_partners.partners.schemas import PartnerSchema
+from drink_partners.partners.views.generic import PartnerView
 
 logger = logging.getLogger(__name__)
 
@@ -16,16 +16,16 @@ logger = logging.getLogger(__name__)
 class PartnerCreateView(PartnerView):
 
     async def post(self):
-        partners = await self._validate_data()
+        partner = await self._validate_data()
 
         try:
-            await self._save_partners(partners)
+            await self._save_partner(partner)
         except PartnerAlreadyExists as error:
             logger.warning(str(error))
             raise Conflict(
                 error_message=str(error)
             )
-        return JSONResponse(status=201, data=json.dumps(partners))
+        return JSONResponse(status=201, data=json.dumps(partner))
 
     async def _validate_data(self):
         data = {}
@@ -34,11 +34,26 @@ class PartnerCreateView(PartnerView):
             data = await self.request.json()
         except Exception as e:
             raise BadRequest(
-                error_message=f'Invalid payload:{data} error:{e}'
+                error_message=f'Invalid payload: {data} error: {e}'
             )
 
-        return data.get('pdvs') or []
+        if not data:
+            raise BadRequest(
+                error_message=f'Empty JSON payload: {data}'
+            )
 
-    async def _save_partners(self, partners):
-        for partner in partners:
-            await self.datasource.save(partner)
+        errors = self._validate_partner_fields(data)
+
+        if errors:
+            raise BadRequest(
+                error_message=f'Invalid partner payload: {errors}'
+            )
+
+        return data
+
+    def _validate_partner_fields(self, partner):
+        schema = PartnerSchema()
+        return schema.validate(partner)
+
+    async def _save_partner(self, partner):
+        await self.datasource.save(partner)
