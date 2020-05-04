@@ -5,8 +5,7 @@ from geojson import Point
 
 from drink_partners.contrib.exceptions import BadRequest, NotFound
 from drink_partners.contrib.response import JSONResponse
-
-from .generic import PartnerView
+from drink_partners.partners.views.generic import PartnerView
 
 logger = logging.getLogger(__name__)
 
