@@ -34,10 +34,14 @@ class PartnersMongoDbBackend(SingletonCreateMixin, PartnersBackend):
                 partner_id=payload['id'],
                 document=payload['document']
             )
+        partner_id = int(payload['id'])
+        payload['id'] = partner_id
 
-        payload['id'] = int(payload['id'])
-        await self.partners_collection.insert_one(payload)
-        del payload['_id']
+        await self.partners_collection.update_one(
+            {'id': partner_id},
+            {'$set': payload},
+            upsert=True
+        )
 
     async def search_nearest_by_coordinate(self, coordinate):
         criteria = {
