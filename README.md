@@ -83,3 +83,78 @@ make run
 
 3. Set token by clicking in `Authorize` button and adding token `test`
 
+## Deploy
+
+1. Clone [repository](https://github.com/henriquebraga/drink-partners)
+
+2. Install [Heroku](https://devcenter.heroku.com/articles/heroku-cli)
+
+3. Configure account for heroku. If you already have one just login
+
+```bash
+    heroku login
+```
+
+### Create App
+
+To create app in your Heroku account:
+
+```bash
+heroku create app drink_partners
+```
+
+### Set environment variables
+
+```bash
+heroku config:set GUNICORN_WORKERS=5 --app drink-partners
+
+heroku config:set PORT=443 --app drink-partners
+
+heroku config:set SIMPLE_SETTINGS=drink_partners.settings.production.py--app drink-partners
+
+heroku config:set MONGODB_URI=mongodb://<address-mongodb> ---app drink-partners
+
+heroku config:set MOTOR_DB=<database-name> ---app drink-partners
+```
+
+### Configure MongoDB
+
+If you do not have a MongoDB server available, you could the service using `Add-ons` from Heroku.
+
+1. Access you personal account in `https://id.heroku.com/login`
+2. Filter for the app name you have created (e.g: `drink-partners`)
+3. Click on Menu `Resources`
+4. In `Add-ons`, search for `mongodb` and click on `mLab MongoDB`
+5. It will automatically configure your mongodb for application
+
+In this case, it will generate `MONGODB_URI` env var automatically. You can check use command `heroku config` as below:
+
+```bash
+heroku config
+GUNICORN_WORKERS: 1
+MONGODB_URI: mongodb://heroku_123:some_password@ds059215.mlab.com:59215/heroku_0dmrmq8z
+```
+
+The URI has the following pattern:
+
+`mongodb://<user>:<password>@<mongodb_address>/<database_name>`
+
+If you do so, you will need to set env var `MOTOR_DB` with the content from database name. In this example, database name is `heroku_0dmrmq8z`.
+
+```bash
+heroku config:set MOTOR_DB=heroku_0dmrmq8z ---app drink-partners
+```
+
+### Deploy Application
+
+Deploy your application to heroku with command:
+
+```bash
+git push heroku master
+```
+
+### Check logs
+
+```bash
+heroku logs
+```
