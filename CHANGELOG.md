@@ -1,3 +1,13 @@
+Drink_Partners 1.0.0 (2020-05-05)
+=================================
+
+Features
+--------
+
+- Add MongoDB steps to execute indexes
+- Configure application to be deployed on Heroku
+
+
 Drink_Partners 0.21.0 (2020-05-04)
 ==================================
 
