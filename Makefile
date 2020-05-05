@@ -47,6 +47,3 @@ release-major: ## Create major release
 	bump2version major --dry-run --no-tag --no-commit --list | grep new_version= | sed -e 's/new_version=//' | SIMPLE_SETTINGS=drink_partners.settings.test xargs -n 1 towncrier --yes --version
 	git commit -am 'Update CHANGELOG'
 	bump2version major
-
-check-vulnerabilities:
-	safety check -r requirements/base.txt
