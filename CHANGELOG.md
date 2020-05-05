@@ -1,3 +1,12 @@
+Drink_Partners 0.21.0 (2020-05-04)
+==================================
+
+Features
+--------
+
+- Set `coordinates`for `Address`/`CoverageArea` fields as required
+
+
 Drink_Partners 0.20.0 (2020-05-04)
 ==================================
 
