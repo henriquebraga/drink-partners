@@ -145,6 +145,10 @@ If you do so, you will need to set env var `MOTOR_DB` with the content from data
 heroku config:set MOTOR_DB=heroku_0dmrmq8z ---app drink-partners
 ```
 
+#### Create Indexes
+
+Access MongoDB and connect to database configured and execute commands in `doc/mongodb_indexes.md`
+
 ### Deploy Application
 
 Deploy your application to heroku with command:
