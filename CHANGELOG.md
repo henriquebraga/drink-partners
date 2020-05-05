@@ -1,3 +1,12 @@
+Drink_Partners 1.0.1 (2020-05-05)
+=================================
+
+Bugfixes
+--------
+
+- Use update with upsert instead of insert when creating partner
+
+
 Drink_Partners 1.0.0 (2020-05-05)
 =================================
 
