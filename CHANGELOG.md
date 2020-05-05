@@ -1,3 +1,12 @@
+Drink_Partners 0.20.0 (2020-05-04)
+==================================
+
+Features
+--------
+
+- Implement search nearest partner by coordinate endpoint
+
+
 Drink_Partners 0.19.0 (2020-05-04)
 ==================================
 
