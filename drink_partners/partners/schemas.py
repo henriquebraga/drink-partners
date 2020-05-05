@@ -28,7 +28,8 @@ class CoverageAreaSchema(Schema):
                     fields.Float(), validate=[validate_point]
                 )
             )
-        )
+        ),
+        required=True
     )
 
 
@@ -45,7 +46,12 @@ class AddressSchema(Schema):
             )
         ]
     )
-    coordinates = fields.List(fields.Float(), validate=[validate_point])
+
+    coordinates = fields.List(
+        fields.Float(),
+        required=True,
+        validate=[validate_point],
+    )
 
 
 class PartnerSchema(Schema):
