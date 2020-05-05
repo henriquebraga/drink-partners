@@ -36,3 +36,31 @@ paths:
           description: "Partner id"
           required: true
           type: "string"
+  /partner/search/lng/{lng}/lat/{lat}/:
+    get:
+      tags:
+        - partner
+      summary: Returns the nearest partner given a cordinate (longitude, latitude)
+      description: Returns the nearest partner given a cordinate (longitude, latitude)
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: success
+        "404":
+          description: not_found
+        "400":
+          description: bad_request
+      parameters:
+        - in: "path"
+          name: "lng"
+          description: "Longitude"
+          required: true
+          type: "float"
+        - in: "path"
+          name: "lat"
+          description: "Latitude"
+          required: true
+          type: "float"

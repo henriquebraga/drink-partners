@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 class MongoClient(SingletonMixin):
 
     def __init__(self):
-        logger.info(
+        logger.debug(
             f'Connection to the mongodb: {settings.MOTOR_URI} '
             f'with pool size: {settings.MOTOR_MAX_POOL_SIZE}'
         )
@@ -22,7 +22,7 @@ class MongoClient(SingletonMixin):
             io_loop=asyncio.get_event_loop(),
             **settings.MOTOR_KWARGS
         )
-        logger.info(f'Default mongodb database: {self.db.name}')
+        logger.debug(f'Default mongodb database: {self.db.name}')
 
     @property
     def db(self):
