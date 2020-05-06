@@ -62,7 +62,7 @@ LOGGING = {
 
 # Auth applications
 AUTH_APPLICATIONS = {
-    'dev': 'test'
+    'dev': os.getenv('APP_TOKEN', 'test')
 }
 
 POOL_OF_RAMOS = {
