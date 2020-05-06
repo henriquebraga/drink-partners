@@ -1,3 +1,12 @@
+Drink_Partners 1.3.0 (2020-05-05)
+=================================
+
+Features
+--------
+
+- Add create index id for partners command
+
+
 Drink_Partners 1.2.0 (2020-05-05)
 =================================
 
