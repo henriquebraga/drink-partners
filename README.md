@@ -115,6 +115,8 @@ heroku config:set SIMPLE_SETTINGS=drink_partners.settings.production --app drink
 heroku config:set MONGODB_URI=mongodb://<address-mongodb> ---app drink-partners
 
 heroku config:set MOTOR_DB=<database-name> ---app drink-partners
+
+heroku config:set APP_TOKEN=<app-for-token-usage> ---app drink-partners
 ```
 
 ### Configure MongoDB
