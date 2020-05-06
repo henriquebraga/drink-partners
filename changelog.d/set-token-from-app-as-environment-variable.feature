@@ -1,1 +1,0 @@
-Set token to authenticate as environment variable
