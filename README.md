@@ -110,7 +110,7 @@ heroku config:set GUNICORN_WORKERS=5 --app drink-partners
 
 heroku config:set PORT=443 --app drink-partners
 
-heroku config:set SIMPLE_SETTINGS=drink_partners.settings.production.py--app drink-partners
+heroku config:set SIMPLE_SETTINGS=drink_partners.settings.production --app drink-partners
 
 heroku config:set MONGODB_URI=mongodb://<address-mongodb> ---app drink-partners
 
@@ -143,6 +143,12 @@ If you do so, you will need to set env var `MOTOR_DB` with the content from data
 
 ```bash
 heroku config:set MOTOR_DB=heroku_0dmrmq8z ---app drink-partners
+```
+
+You also need to reset `MONGODB_URI` with `?retryWrites=false` at the end of the connection string
+
+```bash
+heroku config:set MONGODB_URI="mongodb://heroku_123:some_password@ds059215.mlab.com:59215/heroku_0dmrmq8z?retryWrites=false"
 ```
 
 #### Create Indexes
