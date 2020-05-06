@@ -1,3 +1,13 @@
+Drink_Partners 1.1.0 (2020-05-05)
+=================================
+
+Features
+--------
+
+- Remove safety lib
+- Update readme with retryWrites step when using mlab (MongoDB) from heroku
+
+
 Drink_Partners 1.0.1 (2020-05-05)
 =================================
 
